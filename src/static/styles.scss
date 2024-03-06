@@ -26,3 +26,8 @@
     color: black !important;
     opacity: 1;
 }
+
+.loginInput:focus {
+    outline: none;
+    font-size: 1rem;
+}
