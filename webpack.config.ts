@@ -7,16 +7,18 @@ module.exports = {
     output : {
         path: path.resolve(__dirname, "build"),
         filename: "bundle.js",
+        publicPath: '/'
     },
     devServer: {
         static: {
             directory: path.join(__dirname, "./src/static"),
         },
+        historyApiFallback: true,
         proxy: [
             {
-                context: ['/'],
-                target: "http://localhost:1025",
-                pathRewrite: { "^/": "" },
+              context: ['/api'],
+              target: "http://localhost:1025",
+              pathRewrite: { "^/api": "" },
             },
         ],
         hot: true,
