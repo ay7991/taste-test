@@ -3,12 +3,26 @@
 @tailwind utilities;
 
 .loginInput {
-    align-items: center;
-    justify-content: center;
+    border-bottom: solid black 2px;
+    height: 7vh;
+    width: 25vw;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.loginButtons {
     border-style: solid;
     border-color: black;
     border-width: 2px;
-    height: 7vh;
-    width: 25vw;
-    margin-bottom: 2rem;
+    width: 9rem;
+    height: 4rem;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+::-webkit-input-placeholder {
+    text-align: left;
+    font-size: 140%;
+    color: black !important;
+    opacity: 1;
 }
