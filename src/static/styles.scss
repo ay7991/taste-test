@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.loginInput {
+.loginInput, .signupInput {
     border-bottom: solid black 2px;
     height: 7vh;
     width: 25vw;
@@ -10,7 +10,7 @@
     padding-bottom: 1.5rem;
 }
 
-.loginButtons {
+.loginButtons, .signupButtons {
     border-style: solid;
     border-color: black;
     border-width: 2px;

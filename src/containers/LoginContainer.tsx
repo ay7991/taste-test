@@ -1,4 +1,5 @@
-import React, { MouseEventHandler, ReactElement } from "react";
+import React from "react";
+import { redirect, useNavigate } from "react-router-dom";
 
 const LoginContainer = (): React.JSX.Element => {
     const usernameFocusBlur = (event: any) => {
@@ -13,6 +14,8 @@ const LoginContainer = (): React.JSX.Element => {
         else if (event.type === 'blur') password.placeholder = 'Password';
     }
 
+    const navigate = useNavigate();
+
     return (
         <main id="login" className="flex items-center justify-center h-screen">
             <section className="flex flex-col rounded-xl items-center border-solid border-black border-2 h-2/3 w-1/3">
@@ -22,7 +25,7 @@ const LoginContainer = (): React.JSX.Element => {
                     <input className="loginInput" type="text" placeholder="Password" id="password" onFocus={passwordFocusBlur} onBlur={passwordFocusBlur}/>
                     <section className="flex justify-center">
                         <button className="loginButtons" type="button">Login</button>
-                        <button className="loginButtons" type="button">Sign Up</button>
+                        <button className="loginButtons" type="button" onClick={() => navigate('/signup')}>Sign Up</button>
                     </section>
                 </form>
             </section>
