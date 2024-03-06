@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router} from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
+import '../static/styles.scss';
+
 import LoginContainer from "../containers/LoginContainer";
 
 const App = (): React.JSX.Element => {
