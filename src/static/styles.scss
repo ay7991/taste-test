@@ -27,7 +27,7 @@
     opacity: 1;
 }
 
-.loginInput:focus {
+.loginInput:focus, .signupInput:focus {
     outline: none;
     font-size: 1rem;
 }
