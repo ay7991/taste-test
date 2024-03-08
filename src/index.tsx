@@ -1,8 +1,13 @@
 import React from "react";
 import App from "./components/App";
 import { createRoot } from "react-dom/client";
+import Store from "./state/store";
+import { Provider } from "react-redux";
 
 const root = createRoot(document.getElementById("root"));
 
-// index has to be tsx not ts in order to function properly with JSX elements
-root.render(<App />);
+root.render(
+    <Provider store={Store}>
+        <App />
+    </Provider>
+);
