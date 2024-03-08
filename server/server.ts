@@ -19,10 +19,6 @@ app.use('/api/user', userRouter);
 
 app.use(express.static(path.resolve(__dirname, "../build")));
 
-// app.get('*', (req: any, res: any) => {
-//   return res.status(200).sendFile(path.join(__dirname, '../build/index.html'));
-// });
-
 app.listen(port, () => {
     console.log(`server is running on port ${port}`);
 });
