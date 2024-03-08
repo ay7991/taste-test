@@ -11,14 +11,13 @@ module.exports = {
     },
     devServer: {
         static: {
-            directory: path.join(__dirname, "./src/static"),
+            directory: path.join(__dirname, "./src"),
         },
         historyApiFallback: true,
         proxy: [
             {
               context: ['/api'],
               target: "http://localhost:1025",
-              pathRewrite: { "^/api": "" },
             },
         ],
         hot: true,
