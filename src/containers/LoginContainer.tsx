@@ -24,7 +24,7 @@ const LoginContainer = (): React.JSX.Element => {
                     <input className="loginInput" type="text" placeholder="Username" id="username" onFocus={usernameFocusBlur} onBlur={usernameFocusBlur}/>
                     <input className="loginInput" type="text" placeholder="Password" id="password" onFocus={passwordFocusBlur} onBlur={passwordFocusBlur}/>
                     <section className="flex justify-center">
-                        <button className="loginButtons" type="button">Login</button>
+                        <button className="loginButtons" type="button" onClick={() => navigate('/home')}>Login</button>
                         <button className="loginButtons" type="button" onClick={() => navigate('/signup')}>Sign Up</button>
                     </section>
                 </form>
