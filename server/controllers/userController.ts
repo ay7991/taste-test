@@ -26,10 +26,8 @@ controller.checkUsername = async (req: any, res: any, next: any) => {
     try {
         const foundUser = await User.findOne({username: username});
         if (!foundUser) {
-            res.status(404);
             return next('Cannot find username');
         } else {
-            console.log('found password: ', foundUser.password)
             res.locals.password = foundUser.password;
             return next();
         }
@@ -41,10 +39,13 @@ controller.checkUsername = async (req: any, res: any, next: any) => {
 
 controller.checkPassword = async (req: any, res: any, next: any) => {
     let { password } = req.body;
-
     try {
-        const checkedPassword = await bcryptCheck.checkpw(password, res.locals.password);
-        console.log('checkedpw: ', checkedPassword);
+        const checkedPassword = bcryptCheck.compareSync(password, res.locals.password);
+        if (!checkedPassword) {
+            return next('password is incorrect');
+        } else {
+            return next();
+        }
     } catch (error) {
         console.log('Error checking password');
         return next(JSON.stringify(error));
