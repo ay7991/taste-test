@@ -16,6 +16,31 @@ const LoginContainer = (): React.JSX.Element => {
 
     const navigate = useNavigate();
 
+    const login = (event: any) => {
+        const input = document.getElementsByTagName('input');
+
+        fetch('/api/user/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(
+                {
+                    username: input[0].value,
+                    password: input[1].value
+                },
+            )
+        })
+        .then((res) => res.json())
+        .then((data) => console.log('data: ', data))
+        .then(() => {
+            navigate('/home');
+        })
+        .catch((err) => {
+            console.log('The error belongs to SignupContainer.tsx: ', err);
+        });
+    }
+
     return (
         <main id="login" className="flex items-center justify-center h-screen">
             <section className="flex flex-col rounded-xl items-center border-solid border-black border-2 h-2/3 w-1/3">
@@ -24,7 +49,7 @@ const LoginContainer = (): React.JSX.Element => {
                     <input className="loginInput" type="text" placeholder="Username" id="username" onFocus={usernameFocusBlur} onBlur={usernameFocusBlur}/>
                     <input className="loginInput" type="text" placeholder="Password" id="password" onFocus={passwordFocusBlur} onBlur={passwordFocusBlur}/>
                     <section className="flex justify-center">
-                        <button className="loginButtons" type="button" onClick={() => navigate('/home')}>Login</button>
+                        <button className="loginButtons" type="button" onClick={login}>Login</button>
                         <button className="loginButtons" type="button" onClick={() => navigate('/signup')}>Sign Up</button>
                     </section>
                 </form>
