@@ -6,6 +6,8 @@ router.post('/signup', userController.postUser, (req: any, res: any) => {
    return res.status(200); 
 });
 
-// router.get('/login')
+router.post('/login', userController.checkUsername, userController.checkPassword, (req: any, res: any) => {
+   return res.status(200);
+});
 
 module.exports = router;
