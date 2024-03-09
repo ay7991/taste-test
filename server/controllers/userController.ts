@@ -2,6 +2,9 @@ const User = require('../models/userModel');
 
 const controller: any = {};
 
+const bcryptCheck = require('bcryptjs');
+const SALT_WORK_FACTOR_ = 10;
+
 controller.postUser = async (req: any, res: any, next: any) => {
     const {username, password} = req.body;
 
@@ -17,5 +20,35 @@ controller.postUser = async (req: any, res: any, next: any) => {
         return next(JSON.stringify(error));
     }
 };
+
+controller.checkUsername = async (req: any, res: any, next: any) => {
+    const { username } = req.body;
+    try {
+        const foundUser = await User.findOne({username: username});
+        if (!foundUser) {
+            res.status(404);
+            return next('Cannot find username');
+        } else {
+            console.log('found password: ', foundUser.password)
+            res.locals.password = foundUser.password;
+            return next();
+        }
+    } catch (error) {
+        console.log('Error checking username');
+        return next(JSON.stringify(error));
+    }
+}
+
+controller.checkPassword = async (req: any, res: any, next: any) => {
+    let { password } = req.body;
+
+    try {
+        const checkedPassword = await bcryptCheck.checkpw(password, res.locals.password);
+        console.log('checkedpw: ', checkedPassword);
+    } catch (error) {
+        console.log('Error checking password');
+        return next(JSON.stringify(error));
+    }
+}
 
 module.exports = controller;
