@@ -34,7 +34,7 @@ const LoginContainer = (): React.JSX.Element => {
         .then((res) => res.json())
         .then((data) => {
             if (data !== 'successful login') {
-                
+                throw new Error("Login failed")
             }
         })
         .then(() => {
