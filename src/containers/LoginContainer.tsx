@@ -32,12 +32,16 @@ const LoginContainer = (): React.JSX.Element => {
             )
         })
         .then((res) => res.json())
-        .then((data) => console.log('data: ', data))
+        .then((data) => {
+            if (data !== 'successful login') {
+                throw new Error("Login failed")
+            }
+        })
         .then(() => {
             navigate('/home');
         })
         .catch((err) => {
-            console.log('The error belongs to SignupContainer.tsx: ', err);
+            console.log('The error belongs to LoginContainer.tsx: ', err);
         });
     }
 

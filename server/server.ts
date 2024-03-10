@@ -27,9 +27,9 @@ app.all('*', function(req: any, res: any) {
 // Global Error Handling
 app.use((err: any, req: any, res: any, next: any) => {
   const defaultErr = {
-    log: 'Express error handler caught unknown middleware error',
+    log: res,
     status: 500,
-    message: { err: 'An error occurred' },
+    message: { err: err },
   };
   const errorObj = Object.assign({}, defaultErr, err);
   console.log(errorObj.log);
