@@ -7,7 +7,7 @@ const SALT_WORK_FACTOR_ = 10;
 
 controller.postUser = async (req: any, res: any, next: any) => {
     const {username, password} = req.body;
-
+    
     if (!username || !password) {
         return next('Error: Please fill out username and/or password field');
     }

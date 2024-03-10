@@ -3,7 +3,7 @@ const userController = require('../controllers/userController');
 const router = userExpress.Router();
 
 router.post('/signup', userController.postUser, (req: any, res: any) => {
-   return res.status(200); 
+   return res.status(200).json('successful signup'); 
 });
 
 router.post('/login', userController.checkUsername, userController.checkPassword, (req: any, res: any) => {

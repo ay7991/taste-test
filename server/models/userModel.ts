@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const bcrypt = require('bcryptjs');
-const SALT_WORK_FACTOR = bcrypt.genSaltSync(10);
+const SALT_WORK_FACTOR = 10;
 
 const userSchema = new Schema({
     username: {type: String, required: true},
@@ -12,7 +12,7 @@ const userSchema = new Schema({
 });
 
 userSchema.pre('save', function(next: any) {
-  bcrypt.hashSync(this.password, SALT_WORK_FACTOR, (err: Object, hashed: string) => {
+  bcrypt.hash(this.password, SALT_WORK_FACTOR, (err: Object, hashed: string) => {
     if (err) {
       return next(err);
     }

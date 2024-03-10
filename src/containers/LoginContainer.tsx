@@ -34,7 +34,7 @@ const LoginContainer = (): React.JSX.Element => {
         .then((res) => res.json())
         .then((data) => {
             if (data !== 'successful login') {
-                throw new Error("Login failed")
+                throw new Error(data.err);
             }
         })
         .then(() => {
@@ -46,9 +46,9 @@ const LoginContainer = (): React.JSX.Element => {
     }
 
     return (
-        <main id="login" className="flex items-center justify-center h-screen">
-            <section className="flex flex-col rounded-xl items-center border-solid border-black border-2 h-2/3 w-1/3">
-                <h1 className="flex justify-center mt-16 mb-24 items-center text-5xl h-1/6 w-2/3"> Taste Test </h1>
+        <main className="flex items-center justify-center h-screen">
+            <section id="login" className="flex flex-col rounded-xl items-center h-2/3 w-1/3">
+                <h1 className="flex justify-center mt-16 mb-24 items-center text-6xl h-1/6 w-2/3"> Taste Test </h1>
                 <form className="flex justify-center flex-col h-60 ">
                     <input className="loginInput" type="text" placeholder="Username" id="username" onFocus={usernameFocusBlur} onBlur={usernameFocusBlur}/>
                     <input className="loginInput" type="text" placeholder="Password" id="password" onFocus={passwordFocusBlur} onBlur={passwordFocusBlur}/>

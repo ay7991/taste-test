@@ -37,12 +37,19 @@ const SignupContainer = (): React.JSX.Element => {
                 },
             )
         })
+        .then((res) => res.json())
+        .then((data) => {
+            if (data !== 'successful signup') {
+                throw new Error(data.err);
+            }
+        })
+        .then(() => {
+            navigate('/');
+        })
         .catch((err) => {
             console.log('The error belongs to SignupContainer.tsx: ', err);
         });
-
-        // why were you not working in the .then statement?
-        navigate('/');
+        
     }
 
     return (
