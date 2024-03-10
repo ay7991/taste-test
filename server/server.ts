@@ -27,7 +27,7 @@ app.all('*', function(req: any, res: any) {
 // Global Error Handling
 app.use((err: any, req: any, res: any, next: any) => {
   const defaultErr = {
-    log: res.originalUrl,
+    log: res,
     status: 500,
     message: { err: err },
   };
