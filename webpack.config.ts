@@ -7,7 +7,7 @@ module.exports = {
     output : {
         path: path.resolve(__dirname, "build"),
         filename: "bundle.js",
-        publicPath: '/'
+        publicPath: '/',
     },
     devServer: {
         static: {
@@ -61,6 +61,14 @@ module.exports = {
                     },
                     "sass-loader", 
                 ],
+            },
+            {
+                test: /\.(png|jp(e*)g|gif)$/,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.svg$/,
+                use: ['@svgr/webpack', 'url-loader'], // This handles SVGs as React components and fallbacks to URL loading
             },
         ],
     },

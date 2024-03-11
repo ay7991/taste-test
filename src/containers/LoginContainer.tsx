@@ -1,6 +1,9 @@
 import React from "react";
 import { redirect, useNavigate } from "react-router-dom";
 
+//import { ReactComponent as Bowl } from "../static/images/bowl.svg";
+
+
 const LoginContainer = (): React.JSX.Element => {
     const usernameFocusBlur = (event: any) => {
         const username = document.getElementsByTagName('input')[0];
@@ -53,6 +56,7 @@ const LoginContainer = (): React.JSX.Element => {
                     <input className="loginInput" type="text" placeholder="Username" id="username" onFocus={usernameFocusBlur} onBlur={usernameFocusBlur}/>
                     <input className="loginInput" type="text" placeholder="Password" id="password" onFocus={passwordFocusBlur} onBlur={passwordFocusBlur}/>
                     <section className="flex justify-center">
+                        {Bowl}
                         <button className="loginButtons" type="button" onClick={login}>Login</button>
                         <button className="loginButtons" type="button" onClick={() => navigate('/signup')}>Sign Up</button>
                     </section>
