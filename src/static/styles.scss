@@ -2,15 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+// color variables
+$taste-test-orange: #FFA500;
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+main {
+    background-color: $taste-test-orange;
+}
+
+#login {
+    background-color: darken($taste-test-orange, 8%);
+}
+
+#login h1 {
+    font-family: "Pacifico", cursive;
+    font-weight: 700;
+    font-style: italic;
+    color: white;
+    text-shadow: -2px 2px #228B22;
+}
+
 .loginInput, .signupInput {
-    border-bottom: solid black 2px;
+    font-family: "Concert One", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    background-color: darken($taste-test-orange, 8%);
+    border-bottom: solid white 2px;
     height: 7vh;
     width: 25vw;
     margin-bottom: 2.5rem;
     padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
 }
 
 .loginButtons, .signupButtons {
+    font-family: "Pacifico", sans-serif;
     border-style: solid;
     border-color: black;
     border-width: 2px;
@@ -20,10 +54,16 @@
     border-radius: 10px;
 }
 
+.bowl {
+    width: 13rem;
+    height: 9rem;
+    margin: 0.5rem;
+}
+
 ::-webkit-input-placeholder {
     text-align: left;
     font-size: 140%;
-    color: black !important;
+    color: white !important;
     opacity: 1;
 }
 
