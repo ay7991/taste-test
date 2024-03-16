@@ -14,7 +14,6 @@ $taste-test-orange: #FFA500;
 @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 
-
 main {
     background-color: $taste-test-orange;
 }
@@ -55,7 +54,7 @@ main {
     border-radius: 10px;
 }
 
-#bowl {
+.bowl {
     width: 13rem;
     height: 9rem;
     margin: 0.5rem;

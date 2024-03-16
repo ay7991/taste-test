@@ -19,6 +19,8 @@ app.use('/api/user', userRouter);
 
 app.use(express.static(path.resolve(__dirname, "../build")));
 
+app.use('/images', express.static(path.resolve(__dirname, "../src/static/images")));
+
 // if user makes a request that is not possible
 app.all('*', function(req: any, res: any) {
   res.status(404).send('Status: 404');
