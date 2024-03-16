@@ -18,11 +18,11 @@ main {
     background-color: $taste-test-orange;
 }
 
-#login {
+#login, #signup {
     background-color: darken($taste-test-orange, 8%);
 }
 
-#login h1 {
+#login h1, #signup h1 {
     font-family: "Pacifico", cursive;
     font-weight: 700;
     font-style: italic;
@@ -71,3 +71,5 @@ main {
     outline: none;
     font-size: 1rem;
 }
+
+

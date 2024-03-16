@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import { ReactComponent as Signup } from "../static/images/signup.svg";
+
 const SignupContainer = (): React.JSX.Element => {
     const usernameFocusBlur = (event: any) => {
         const username = document.getElementsByTagName('input')[0];
@@ -53,15 +55,15 @@ const SignupContainer = (): React.JSX.Element => {
     }
 
     return (
-        <main id="signup" className="flex items-center justify-center h-screen">
-            <section className="flex flex-col rounded-xl items-center border-solid border-black border-2 h-2/3 w-1/3">
-                <h1 className="flex justify-center mt-16 mb-28 items-center text-4xl h-1/6 w-2/3"> Create Your Account </h1>
+        <main className="flex items-center justify-center h-screen">
+            <section id="signup" className="flex flex-col rounded-xl items-center h-2/3 w-1/3">
+                <h1 className="flex justify-center mt-10 mb-36 items-center text-4xl h-1/6 w-2/3"> Create Your Account </h1>
                 <form className="flex justify-center flex-col h-60">
                     <input className="signupInput" type="text" placeholder="Username" id="username" onFocus={usernameFocusBlur} onBlur={usernameFocusBlur}/>
                     <input className="signupInput" type="text" placeholder="Password" id="password" onFocus={passwordFocusBlur} onBlur={passwordFocusBlur}/>
                     <input className="signupInput" type="text" placeholder="Retype Password" id="passwordRetype" onFocus={passwordRetypeFocusBlur} onBlur={passwordRetypeFocusBlur}/>
                     <section className="flex justify-center">
-                        <button className="signupButtons" type="button" onClick={signup}>Sign Up</button>
+                        <Signup className="bowl" type="button" onClick={signup} />
                     </section>
                 </form>
             </section>
