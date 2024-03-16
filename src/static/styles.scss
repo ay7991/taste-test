@@ -18,6 +18,14 @@ main {
     background-color: $taste-test-orange;
 }
 
+.navbar {
+    font-family: "Concert One", sans-serif;
+    font-style: italic;
+    margin-right: 100px;
+    font-size: 180%;
+    color: white;
+}
+
 #login, #signup {
     background-color: darken($taste-test-orange, 8%);
 }
@@ -72,4 +80,57 @@ main {
     font-size: 1rem;
 }
 
+.faves {
+    font-family: "Concert One", sans-serif;
+    font-style: italic;
+    color: white;
+    text-shadow: -2px 2px #228B22;
+    font-size: 400%;
+    margin-top: 2vh;
+    margin-bottom: 7vh;
+}
+
+#mostRecipes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+#carousel-container {
+    width: 100vw;
+    height: 20vh;
+    background-color: $taste-test-orange;
+}
+
+#carousel-track {
+    display: flex;
+    position: absolute;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 20vh;
+    animation: slide 10s linear infinite;
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+img {
+    width: calc(100% / 10);
+    height: 20vh;
+    flex-shrink: 0; /* Prevents images from being squashed */
+    flex-grow: 0; /* Prevents images from growing */
+    margin: 5%;
+}
 
