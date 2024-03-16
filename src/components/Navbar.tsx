@@ -8,10 +8,10 @@ const Navbar = (): React.JSX.Element => {
 
     return (
         <nav>
-            <NavLink onClick={() => dispatch(homescreen())} to='/home'>
+            <NavLink className="navbar" onClick={() => dispatch(homescreen())} to='/home'>
                 Home
             </NavLink>
-            <NavLink onClick={() => dispatch(pantry())} to='/home'>
+            <NavLink className="navbar" onClick={() => dispatch(pantry())} to='/home'>
                 Your Pantry
             </NavLink>
         </nav>
