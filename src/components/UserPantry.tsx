@@ -4,10 +4,13 @@ const UserPantry = (): React.JSX.Element => {
     return (
         <main>
             <section>
-                <h1> @username Pantry </h1>
+                <h1 id="pantry"> Your Pantry </h1>
             </section>
             <section>
-                <button> Add Ingredient </button>
+                <form>
+                    <input type="text" placeholder="food" id="ingredientInput"/>
+                    <button> Add Ingredient </button>
+                </form>
             </section>
         </main>
     );
